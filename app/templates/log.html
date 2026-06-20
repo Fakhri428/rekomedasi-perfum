@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Log Rekomendasi - PerfumeDSS{% endblock %}
+
+{% block content %}
+<section class="result-header">
+  <div>
+    <p class="eyebrow">Riwayat</p>
+    <h1>Log rekomendasi</h1>
+  </div>
+  <div class="header-actions">
+    {% if logs %}
+      <form action="{{ url_for('main.log_clear') }}" method="post"
+            onsubmit="return confirm('Hapus semua log rekomendasi?');">
+        <button class="secondary-button" type="submit">Bersihkan semua</button>
+      </form>
+    {% endif %}
+    <a class="secondary-button" href="{{ url_for('main.index') }}">Buat rekomendasi</a>
+  </div>
+</section>
+
+<section class="log-wrap">
+  {% if logs %}
+    <div class="log-list">
+      {% for log in logs %}
+        <article class="log-item">
+          <div class="log-item-main">
+            <p class="log-time">{{ log.created_display }}</p>
+            <p class="log-summary">
+              {{ log.preference.gender }} &middot;
+              {{ log.preference.age }} thn &middot;
+              {{ log.preference.fragrance_family or "Family bebas" }} &middot;
+              {{ log.preference.usage }}
+            </p>
+            <div class="log-tags">
+              <span>{{ log.result_count }} hasil</span>
+              {% if log.preference.aroma_keywords %}
+                <span>{{ log.preference.aroma_keywords }}</span>
+              {% endif %}
+              <span>Budget {{ "%.0f"|format(log.preference.budget) }}</span>
+            </div>
+          </div>
+          <div class="log-item-actions">
+            <a class="text-link" href="{{ url_for('main.log_detail', log_id=log.id) }}">Lihat</a>
+            <a class="text-link" href="{{ url_for('main.log_pdf', log_id=log.id) }}">PDF</a>
+            <form action="{{ url_for('main.log_delete', log_id=log.id) }}" method="post"
+                  onsubmit="return confirm('Hapus log ini?');">
+              <button class="link-button" type="submit">Hapus</button>
+            </form>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="empty-state">Belum ada log rekomendasi. Buat rekomendasi terlebih dahulu.</p>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Konfigurasi lokal Claude Code
+.claude/
+
+# Log rekomendasi runtime (di-generate saat aplikasi berjalan)
+data/*.json
+
+# Artefak training SBERT — tidak dipakai runtime & melebihi limit GitHub 100MB
+# (optimizer.pt ~173MB). Hanya fine_tuned_model + embeddings yang diperlukan.
+models/sbert_fuzzy_topsis/training_output/

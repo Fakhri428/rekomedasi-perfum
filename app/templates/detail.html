@@ -1,0 +1,58 @@
+{% extends "base.html" %} {% block title %}{{ perfume.name }} - PerfumeDSS{%
+endblock %} {% block content %}
+<section class="detail-layout">
+  <aside class="detail-media">
+    {% if perfume.image %}
+    <img src="{{ perfume.image }}" alt="{{ perfume.name }}" />
+    {% else %}
+    <div class="detail-placeholder">{{ perfume.brand[:1] }}</div>
+    {% endif %}
+  </aside>
+
+  <article class="detail-content">
+    <a
+      class="text-link"
+      href="#"
+      onclick="if (document.referrer && document.referrer.indexOf('/recommend') !== -1) { history.back(); } else { window.location.href = '{{ url_for('main.index') }}'; } return false;"
+      >Kembali ke hasil</a
+    >
+    <p class="eyebrow">{{ perfume.fragrance_family }}</p>
+    <h1>{{ perfume.name }}</h1>
+    <p class="brand-name">{{ perfume.brand }}</p>
+
+    <div class="detail-stats">
+      <span>Gender <strong>{{ perfume.gender }}</strong></span>
+      <span>Harga <strong>{{ perfume.display_price }}</strong></span>
+      <span>Rating <strong>{{ perfume.display_rating }}</strong></span>
+      <span>Ukuran <strong>{{ perfume.size or "-" }}</strong></span>
+      <span
+        >Konsentrasi <strong>{{ perfume.concentration or "-" }}</strong></span
+      >
+      <span>Tahun <strong>{{ perfume.year or "-" }}</strong></span>
+    </div>
+
+    <div class="detail-section">
+      <h2>Notes</h2>
+      <dl>
+        <dt>Top</dt>
+        <dd>{{ perfume.top_note or "-" }}</dd>
+        <dt>Middle</dt>
+        <dd>{{ perfume.middle_note or "-" }}</dd>
+        <dt>Base</dt>
+        <dd>{{ perfume.base_note or "-" }}</dd>
+      </dl>
+    </div>
+
+    <div class="detail-section">
+      <h2>Profil</h2>
+      <p>{{ perfume.description or "Deskripsi tidak tersedia." }}</p>
+      <dl>
+        <dt>Character</dt>
+        <dd>{{ perfume.character or "-" }}</dd>
+        <dt>Ingredients</dt>
+        <dd>{{ perfume.ingredients or "-" }}</dd>
+      </dl>
+    </div>
+  </article>
+</section>
+{% endblock %}

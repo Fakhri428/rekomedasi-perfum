@@ -1,0 +1,15 @@
+pandas>=2.0
+numpy>=1.26
+scikit-learn>=1.4
+scipy>=1.12
+matplotlib>=3.8
+seaborn>=0.13
+sentence-transformers>=3.0
+datasets>=2.19
+tqdm>=4.66
+nbformat>=5.10
+
+# Catatan Windows + NVIDIA:
+# Install PyTorch CUDA wheel secara terpisah sebelum menjalankan notebook:
+# python -m pip uninstall -y torch torchvision torchaudio
+# python -m pip install -r requirements-experiment-cuda.txt

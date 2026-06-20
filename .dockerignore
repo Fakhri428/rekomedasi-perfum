@@ -1,0 +1,24 @@
+# Artefak training SBERT — TIDAK dipakai runtime, ~520MB (optimizer/checkpoint).
+models/sbert_fuzzy_topsis/training_output/
+
+# File pengembangan & dokumen yang tidak perlu di image.
+notebooks/
+tools/
+*.docx
+*.md
+!README.md
+requirements-experiment*.txt
+
+# Cache & artefak lokal.
+__pycache__/
+**/__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+.venv/
+venv/
+env/
+data/
+.DS_Store
+Thumbs.db

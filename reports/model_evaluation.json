@@ -1,0 +1,90 @@
+{
+  "dataset": {
+    "raw_rows": 4239,
+    "clean_rows": 3296,
+    "train_rows": 2632,
+    "test_rows": 659,
+    "n_tfidf_features": 79937
+  },
+  "retrieval_metrics": [
+    {
+      "model": "random_baseline",
+      "k": 5,
+      "precision": 0.1584,
+      "recall": 0.0020316543619052162,
+      "hit_rate": 0.516,
+      "mrr": 0.2918,
+      "ndcg": 0.1597746167684875
+    },
+    {
+      "model": "tfidf_cosine",
+      "k": 5,
+      "precision": 0.2824,
+      "recall": 0.003533568962543193,
+      "hit_rate": 0.618,
+      "mrr": 0.409,
+      "ndcg": 0.2826831877877415
+    },
+    {
+      "model": "random_baseline",
+      "k": 10,
+      "precision": 0.16920000000000002,
+      "recall": 0.004448693128196995,
+      "hit_rate": 0.728,
+      "mrr": 0.3206785714285714,
+      "ndcg": 0.16698106978676097
+    },
+    {
+      "model": "tfidf_cosine",
+      "k": 10,
+      "precision": 0.26380000000000003,
+      "recall": 0.006571926021872107,
+      "hit_rate": 0.79,
+      "mrr": 0.4326206349206349,
+      "ndcg": 0.26915725706306387
+    }
+  ],
+  "consistency_checks": [
+    {
+      "test": "Formula Fuzzy SAW",
+      "expected": 0.9125,
+      "actual": 0.9125,
+      "passed": true
+    },
+    {
+      "test": "Gender match lebih tinggi dari gender mismatch",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "test": "Harga dalam budget lebih tinggi dari jauh di atas budget",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    },
+    {
+      "test": "Rating 5 lebih tinggi dari rating kosong",
+      "expected": true,
+      "actual": true,
+      "passed": true
+    }
+  ],
+  "scenario_top_1": {
+    "scenario_1": {
+      "name": "Who Am I Just Right EDP",
+      "brand": "The Different Company",
+      "final_score": 0.7602
+    },
+    "scenario_2": {
+      "name": "Lorenzo Villoresi Firenze Teint De Neige EDT",
+      "brand": "Lorenzo Villoresi Firenze",
+      "final_score": 0.7689
+    },
+    "scenario_3": {
+      "name": "Gucci Oud",
+      "brand": "Gucci",
+      "final_score": 0.7731
+    }
+  }
+}

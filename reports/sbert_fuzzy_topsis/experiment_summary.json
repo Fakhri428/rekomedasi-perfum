@@ -1,0 +1,105 @@
+{
+  "dataset_path": "f:\\perkuliahan\\Semester 6\\SPK\\project\\parfum\\Perfumes_Recommender-main\\Datasets\\final_df.csv",
+  "rows_raw": 4239,
+  "rows_clean": 3296,
+  "base_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "fine_tuned_model_dir": "f:\\perkuliahan\\Semester 6\\SPK\\project\\parfum\\Perfumes_Recommender-main\\models\\sbert_fuzzy_topsis\\fine_tuned_model",
+  "pair_validation_metrics": {
+    "pearson": 0.9895777325069104,
+    "spearman": 0.9646926681222309,
+    "mae": 0.2791248921446228,
+    "rmse": 0.29416692049730303
+  },
+  "retrieval_metrics": [
+    {
+      "k": 5,
+      "precision": 0.9992000000000001,
+      "recall": 0.006968304295702629,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "map": 0.9992000000000001,
+      "ndcg": 0.9994454531452899,
+      "relevant_count": 953.396
+    },
+    {
+      "k": 10,
+      "precision": 0.999,
+      "recall": 0.013930760638188882,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "map": 0.9988253968253968,
+      "ndcg": 0.9992172364777488,
+      "relevant_count": 953.396
+    },
+    {
+      "k": 20,
+      "precision": 0.9987999999999999,
+      "recall": 0.027673438266118722,
+      "hit_rate": 1.0,
+      "mrr": 1.0,
+      "map": 0.9984275103989578,
+      "ndcg": 0.9990251583894172,
+      "relevant_count": 953.396
+    }
+  ],
+  "scenario_metrics": [
+    {
+      "scenario": "Daily fresh untuk wanita muda",
+      "mean_topsis_score": 0.6230399690841939,
+      "mean_cosine_similarity": 0.2790781855583191,
+      "mean_criteria_score": 0.6841697405345601,
+      "family_hit_rate": 0.4,
+      "gender_fit_rate": 0.9,
+      "budget_fit_rate": 0.9,
+      "rating_fit_mean": 0.8334593716852119
+    },
+    {
+      "scenario": "Formal woody untuk pria dewasa",
+      "mean_topsis_score": 0.7405086218301145,
+      "mean_cosine_similarity": 0.37649327516555786,
+      "mean_criteria_score": 0.7957358976607469,
+      "family_hit_rate": 0.7,
+      "gender_fit_rate": 0.9,
+      "budget_fit_rate": 1.0,
+      "rating_fit_mean": 0.8376857507658789
+    },
+    {
+      "scenario": "Romantic floral date night",
+      "mean_topsis_score": 0.7268395609950995,
+      "mean_cosine_similarity": 0.3742702603340149,
+      "mean_criteria_score": 0.8230642584197723,
+      "family_hit_rate": 1.0,
+      "gender_fit_rate": 1.0,
+      "budget_fit_rate": 1.0,
+      "rating_fit_mean": 0.8852287060067697
+    },
+    {
+      "scenario": "Unisex office clean aromatic",
+      "mean_topsis_score": 0.7579484625004513,
+      "mean_cosine_similarity": 0.346698522567749,
+      "mean_criteria_score": 0.8005181401550129,
+      "family_hit_rate": 1.0,
+      "gender_fit_rate": 1.0,
+      "budget_fit_rate": 1.0,
+      "rating_fit_mean": 0.8496490101039541
+    }
+  ],
+  "default_weights": {
+    "semantic_similarity": 0.3,
+    "family_fit": 0.16,
+    "gender_fit": 0.12,
+    "age_fit": 0.08,
+    "usage_fit": 0.1,
+    "rating_fit": 0.1,
+    "popularity_fit": 0.05,
+    "budget_fit": 0.09
+  },
+  "artifacts": {
+    "prepared_dataset": "f:\\perkuliahan\\Semester 6\\SPK\\project\\parfum\\Perfumes_Recommender-main\\reports\\sbert_fuzzy_topsis\\prepared_perfume_dataset.csv",
+    "embeddings": "f:\\perkuliahan\\Semester 6\\SPK\\project\\parfum\\Perfumes_Recommender-main\\models\\sbert_fuzzy_topsis\\perfume_embeddings.npy",
+    "demo_recommendations": "f:\\perkuliahan\\Semester 6\\SPK\\project\\parfum\\Perfumes_Recommender-main\\reports\\sbert_fuzzy_topsis\\demo_recommendations.csv",
+    "validation_pair_predictions": "f:\\perkuliahan\\Semester 6\\SPK\\project\\parfum\\Perfumes_Recommender-main\\reports\\sbert_fuzzy_topsis\\validation_pair_predictions.csv",
+    "retrieval_metrics": "f:\\perkuliahan\\Semester 6\\SPK\\project\\parfum\\Perfumes_Recommender-main\\reports\\sbert_fuzzy_topsis\\retrieval_metrics.csv",
+    "scenario_metrics": "f:\\perkuliahan\\Semester 6\\SPK\\project\\parfum\\Perfumes_Recommender-main\\reports\\sbert_fuzzy_topsis\\scenario_metrics.csv"
+  }
+}

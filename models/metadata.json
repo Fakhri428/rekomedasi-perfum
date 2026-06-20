@@ -1,0 +1,10 @@
+{
+  "dataset_source": "Datasets\\final_df.csv",
+  "processed_dataset": "Datasets\\perfume_clean.csv",
+  "vectorizer": "models\\tfidf_vectorizer.joblib",
+  "tfidf_matrix": "models\\tfidf_matrix.joblib",
+  "n_items": 3296,
+  "n_features": 79937,
+  "training_method": "TfidfVectorizer.fit_transform(aroma_profile)",
+  "evaluation_method": "Top-K retrieval with fragrance_family as proxy relevance label"
+}
