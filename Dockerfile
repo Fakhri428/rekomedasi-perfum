@@ -31,4 +31,4 @@ USER user
 EXPOSE 7860
 
 # 1 worker agar hemat RAM (model SBERT dimuat sekali per worker).
-CMD ["gunicorn", "--bind", "0.0.0.0:7860", "--workers", "1", "--threads", "4", "--timeout", "180", "app:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:7860", "--workers", "1", "--threads", "4", "--timeout", "180", "wsgi:app"]
